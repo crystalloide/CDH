@@ -105,8 +105,11 @@ hbase org.apache.hadoop.hbase.util.LoadTestTool -tn lab_split_auto -write 1:1024
 
 Retournez dans le shell ou utilisez l'interface Web (port 16010) : 
 
-Dans le shell :
+
+Pour le faire dans le shell :
+
 ```bash
+hbase shell
 list_regions 'lab_split_auto'
 ```
 

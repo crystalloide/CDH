@@ -103,9 +103,6 @@ hbase org.apache.hadoop.hbase.util.LoadTestTool -tn lab_split_auto -write 1:1024
 
 ### Étape 3 : Vérification des régions
 
-Retournez dans le shell ou utilisez l'interface Web (port 16010) : 
-
-
 1. La méthode « à l'ancienne » (HBase 1.x)
 ```bash
 Dans les versions antérieures, vous devez parcourir la table hbase:metata pour identifier l'emplacement des régions de votre table.
@@ -117,13 +114,15 @@ scan 'hbase:meta', {FILTER => "PrefixFilter('lab_split_auto')"}
 
 ```bash
 
+
+
 2. La méthode UI (la plus simple)
 
-Puisque vous exécutez une requête LoadTestToolet attendez les résultats, l'interface web est beaucoup plus visuelle.
+Puisque vous exécutez une requête LoadTestToolet attendez les résultats, l'interface web est beaucoup plus visuelle. 
 
-Ouvrez votre navigateur sur
+Ouvrez votre navigateur sur (http://<master-hostname>:port par défaut).
 ```bash
-http://<master-hostname>:16010(port par défaut).
+http://quickstart.cloudera:60010:16010
 ```
 Cliquez sur « Tableaux » dans le menu du haut.
 

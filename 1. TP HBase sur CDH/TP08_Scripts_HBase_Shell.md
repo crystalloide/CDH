@@ -92,9 +92,13 @@ hbase shell /tmp/create_bibliotheque.hbase
 
 ***
 
-## Partie 3 — Script d'Alimentation (PUT en masse)
+## Partie 3 — Script d'alimentation en masse (PUT en masse)
 
 Créez `/tmp/insert_bibliotheque.rb` :
+
+```bash
+gedit /tmp/insert_bibliotheque.rb
+```
 
 ```ruby
 # Insertion de plusieurs livres

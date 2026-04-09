@@ -176,12 +176,22 @@ scan 'bibliotheque', {
 }
 ```
 
+Exécutez :
+
+```bash
+hbase shell /tmp/query_bibliotheque.hbase
+```
+
 
 ***
 
 ## Partie 5 — Script de Maintenance (DDL Avancé)
 
 Créez `/tmp/maintenance_bibliotheque.hbase` :
+
+```bash
+gedit /tmp/maintenance_bibliotheque.hbase
+```
 
 ```ruby
 puts "=== Alter : ajout famille de colonnes ==="
@@ -199,6 +209,13 @@ get_splits 'bibliotheque'
 puts "=== Count des lignes ==="
 count 'bibliotheque', INTERVAL => 10
 ```
+
+Exécutez :
+
+```bash
+hbase shell /tmp/maintenance_bibliotheque.hbase
+```
+
 
 > **Point pédagogique :** Il est impératif de `disable` la table avant tout `alter` de structure. L'oubli de cette étape génère une erreur `TableNotDisabledException`.[^3]
 

@@ -33,10 +33,12 @@ echo "status 'simple'" > /tmp/test_hbase.hbase
 hbase shell /tmp/test_hbase.hbase
 ```
 
-**Étape 2 – Passer une commande inline via pipe**
+**Étape 2 – Passer une commande inline**
 
 ```bash
-echo "list" | hbase shell
+hbase shell <<EOF
+list
+EOF
 ```
 
 Vous pouvez aussi rediriger la sortie vers un fichier de résultats  :[^2]

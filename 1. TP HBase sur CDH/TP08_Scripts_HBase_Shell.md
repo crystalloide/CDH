@@ -41,10 +41,14 @@ list
 EOF
 ```
 
-Vous pouvez aussi rediriger la sortie vers un fichier de résultats  :[^2]
+Vous pouvez aussi rediriger la sortie vers un fichier de résultats : 
 
 ```bash
 echo "list" | hbase shell | grep -v "^[0-9]" > /tmp/tables.txt
+```
+
+```bash
+cat /tmp/tables.txt
 ```
 
 

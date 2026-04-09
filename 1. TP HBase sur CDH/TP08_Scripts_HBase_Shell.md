@@ -54,7 +54,7 @@ cat /tmp/tables.txt
 
 ***
 
-## Partie 2 — Création d'une Table via Script
+## Partie 2 — Création d'une table via Script
 
 Créez le fichier `/tmp/create_bibliotheque.hbase` 
 
@@ -142,7 +142,7 @@ hbase shell /tmp/insert_bibliotheque.rb
 
 ***
 
-## Partie 4 — Script de Requêtage avec Filtres
+## Partie 4 — script de requêtage avec filtres
 
 Créez `/tmp/query_bibliotheque.hbase` pour interroger les données :
 
@@ -185,7 +185,7 @@ hbase shell /tmp/query_bibliotheque.hbase
 
 ***
 
-## Partie 5 — Script de Maintenance (DDL Avancé)
+## Partie 5 — script de maintenance (DDL avancé)
 
 Créez `/tmp/maintenance_bibliotheque.hbase` :
 
@@ -221,9 +221,9 @@ hbase shell /tmp/maintenance_bibliotheque.hbase
 
 ***
 
-## Partie 6 — Script d'Administration Bash + HBase Shell
+## Partie 6 — script d'administration bash + shell HBase
 
-Ce script bash orchestre plusieurs opérations HBase depuis le système  :[^4]
+Ce script bash orchestre plusieurs opérations HBase depuis le système  :
 
 Créez `/tmp/admin_hbase.sh` :
 
@@ -264,7 +264,7 @@ chmod +x /tmp/admin_hbase.sh
 
 ***
 
-## Tableau Récapitulatif des Commandes Clés
+## Tableau récapitulatif des commandes clés
 
 | Commande | Rôle | Contexte Script |
 | :-- | :-- | :-- |

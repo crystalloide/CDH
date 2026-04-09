@@ -168,11 +168,14 @@ Résultat : La table possède déjà 4 régions réparties, avant même d'avoir 
 
 C'est la méthode idéale pour éviter le Hotspotting (surcharge d'un seul serveur en début de projet).
 
-5. Exercice 3 : Maintenance et Équilibrage
+
+## 5. Exercice 3 : Maintenance et Équilibrage
 
 Même avec des splits automatiques, le cluster peut devenir déséquilibré (un RegionServer gère plus de régions que les autres).
 
-Étape 1 : Forcer un split manuelSi une région est trop sollicitée (lectures intensives sur une plage précise), 
+### Étape 1 : Forcer un split manuel
+
+Si une région est trop sollicitée (lectures intensives sur une plage précise), 
 
 on peut la couper manuellement :Extrait de code# Syntaxe : split 'nom_de_la_region' ou 'nom_de_la_table'
 
@@ -180,7 +183,7 @@ on peut la couper manuellement :Extrait de code# Syntaxe : split 'nom_de_la_regi
 split 'lab_presplit'
 ```
 
-Étape 2 : Lancer le Balancer
+### Étape 2 : Lancer le Balancer
 
 HBase déplace les régions entre les serveurs pour équilibrer la charge globale du cluster.
 
@@ -190,8 +193,8 @@ balancer
 
 ##### Pendant l'exécution du test, vous pouvez ouvrir un autre terminal et exécuter :
 
-# Check how many regions have been created by the auto-split
 ```bash
+# Check how many regions have been created by the auto-split
 echo "list_regions 'lab_split_auto'" | hbase shell
 ```
 
@@ -200,7 +203,7 @@ echo "list_regions 'lab_split_auto'" | hbase shell
 echo "count 'lab_split_auto'" | hbase shell
 ```
 
-6. Synthèse des commandes utiles :
+## 6. Synthèse des commandes utiles :
 
 ____
 Action						Commande Shell
@@ -230,21 +233,21 @@ Plus on se rapproche de l'objet (la table ou la famille de colonnes), plus la r�
 Voici l'ordre de priorité (du plus fort au plus faible) utilisé par HBase pour déterminer le MAX_FILESIZE :
 
 
-1. Propriété de la Table (Le plus prioritaire)	
+**1. Propriété de la Table (Le plus prioritaire)**
 
 C’est ce que nous avons fait dans le lab précédent avec la commande create 'table', {METHOD => 'table_att', MAX_FILESIZE => '...'}.
 Si ce paramètre est défini explicitement au niveau de la table, HBase ignore totalement les configurations globales. 
 C'est idéal pour isoler une table très volumineuse ou, au contraire, une petite table de référence.
 
 
-2. Configuration Globale (hbase-site.xml)
+**2. Configuration Globale (hbase-site.xml)**
 
 Si rien n'est spécifié au niveau de la table, HBase cherche la clé **hbase.hregion.max.filesize** dans votre fichier de configuration cluster.
 Valeur par défaut (HBase 2.x+) : 10 Go.
 Cette valeur s'applique à toutes les tables du cluster qui n'ont pas de paramètre spécifique.
 
 
-3. La politique de Split (RegionSplitPolicy)
+**3. La politique de Split (RegionSplitPolicy)**
 
 C'est ici que ça se complique un peu (et où l'on "s'emmêle les pinceaux"). 
 HBase n'utilise pas toujours une taille fixe. 
@@ -255,7 +258,7 @@ Le split se déclenche selon cette formule :$$\min(R^3 \cdot \text{flush\_size},
 Cela signifie que pour une nouvelle table, HBase va splitter très tôt (ex: 128 Mo, puis 1 Go...) 
 jusqu'à atteindre la limite finale fixée par le MAX_FILESIZE.
 
-Résumé de la priorité d'application :
+**Résumé de la priorité d'application :**
 
 Niveau		Source									Priorité
 

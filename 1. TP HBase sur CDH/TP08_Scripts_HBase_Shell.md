@@ -144,7 +144,7 @@ hbase shell /tmp/insert_bibliotheque.rb
 
 ## Partie 4 — Script de Requêtage avec Filtres
 
-Créez `/tmp/query_bibliotheque.hbase` pour interroger les données  :[^3]
+Créez `/tmp/query_bibliotheque.hbase` pour interroger les données :
 
 ```ruby
 puts "=== GET simple ==="

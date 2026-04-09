@@ -275,7 +275,7 @@ chmod +x /tmp/admin_hbase.sh
 | `delete` | Supprimer une cellule | Maintenance |
 | `alter` | Modifier la structure d'une table | DDL évolution |
 | `flush` | Forcer l'écriture MemStore → HFile | Performance |
-| `major_compact` | Fusion et nettoyage des HFiles | Optimisation [^5] |
+| `major_compact` | Fusion et nettoyage des HFiles | Optimisation |
 | `count` | Compter les lignes | Monitoring |
 
 ***

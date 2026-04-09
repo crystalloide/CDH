@@ -217,7 +217,7 @@ hbase shell /tmp/maintenance_bibliotheque.hbase
 ```
 
 
-> **Point pédagogique :** Il est impératif de `disable` la table avant tout `alter` de structure. L'oubli de cette étape génère une erreur `TableNotDisabledException`.[^3]
+> **Point à noter :** Il est impératif de `disable` la table avant tout `alter` de structure. L'oubli de cette étape génère une erreur `TableNotDisabledException`
 
 ***
 

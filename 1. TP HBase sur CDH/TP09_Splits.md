@@ -49,7 +49,6 @@ hbase shell
 create 'lab_split_auto', 'data', {METHOD => 'table_att', MAX_FILESIZE => '67108864'}
 ```
 
-
 ### Étape 2 : 
 
 Injection de données avec LoadTestToolSortez du shell (exit) 
@@ -65,6 +64,32 @@ hbase org.apache.hadoop.hbase.util.LoadTestTool -tn lab_split_auto -write 1:1024
  -tn : Nom de la table.
  -write : 1 thread, 1024 octets par valeur, 10 colonnes par ligne.
  -num_keys : Nombre total de lignes à insérer.
+
+
+Décomposition des commandes
+-tn lab_split_autoSpécifie le nom de la table cible. Si la table n'existe pas, l'outil tentera de la créer.
+
+-write 1:1024:10: Ceci définit la configuration de la charge de travail d'écriture au format <avg_payload_size>:<max_payload_size>:<num_threads>.
+
+1 : Taille minimale de la charge utile (1 octet).
+
+1024 : Taille maximale de la charge utile (1 Ko).
+
+10 : L'outil utilisera 10 threads parallèles pour écrire les données.
+
+-num_keys 500000: Indique à l'outil d'écrire un total de 500 000 lignes uniques (clés).
+
+À quoi s'attendre pendant l'exécution
+Création de la table : si lab_split_autoelle n’existe pas, HBase la créera avec des familles de colonnes par défaut (généralement f1).
+
+Fractionnement des régions : Le nom de votre table incluant « split_auto », vous testez probablement la fonctionnalité de fractionnement automatique des régions de HBase . À mesure que les 500 000 clés sont écrites et que les fichiers HFile augmentent, le nombre de régions de cette table devrait s’accroître dans l’interface utilisateur du serveur HBase (généralement sur le port 16010).
+
+Rapports d'avancement : La console affichera des mises à jour d'état périodiques indiquant le nombre de clés écrites et le débit d'écriture actuel (clés/seconde).
+
+Problèmes courants à surveiller
+Charge du serveur de régions : Avec 10 threads et 500 000 clés, vous constaterez un pic d’utilisation du processeur et des E/S disque. Si le serveur de régions MemStoreest saturé trop rapidement, des messages « Mises à jour bloquantes » peuvent apparaître dans les journaux.
+
+Délai d'expiration de session Zookeeper : si le cluster manque de ressources, la charge d'écriture importante peut entraîner la perte de la communication entre Zookeeper et un RegionServer, ce qui peut provoquer un plantage du serveur.
  
 
 ### Étape 3 : Vérification des régions

@@ -228,6 +228,10 @@ Ce script bash orchestre plusieurs opérations HBase depuis le système  :[^4]
 Créez `/tmp/admin_hbase.sh` :
 
 ```bash
+gedit /tmp/admin_hbase.sh
+```
+
+```bash
 #!/bin/bash
 HBASE_CMD="hbase shell"
 TABLE="bibliotheque"

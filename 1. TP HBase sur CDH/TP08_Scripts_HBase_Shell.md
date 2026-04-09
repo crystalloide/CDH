@@ -82,7 +82,7 @@ describe 'bibliotheque'
 list
 ```
 
-Exécutez le script  :[^1]
+Exécutez le script :
 
 ```bash
 hbase shell /tmp/create_bibliotheque.hbase

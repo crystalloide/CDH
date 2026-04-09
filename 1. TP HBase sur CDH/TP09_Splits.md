@@ -103,7 +103,7 @@ hbase org.apache.hadoop.hbase.util.LoadTestTool -tn lab_split_auto -write 1:1024
 
 ### Étape 3 : Vérification des régions
 
-1. La méthode « à l'ancienne » (HBase 1.x)
+##### 1. La méthode « à l'ancienne » (HBase 1.x)
 ```bash
 Dans les versions antérieures, vous devez parcourir la table hbase:metata pour identifier l'emplacement des régions de votre table.
 Cette commande affichera la liste de toutes les régions appartenant à **lab_split_auto** :
@@ -116,14 +116,16 @@ scan 'hbase:meta', {FILTER => "PrefixFilter('lab_split_auto')"}
 
 
 
-2. La méthode UI (la plus simple)
+##### 2. La méthode UI (la plus simple)
 
 Puisque vous exécutez une requête LoadTestToolet attendez les résultats, l'interface web est beaucoup plus visuelle. 
 
 Ouvrez votre navigateur sur (http://<master-hostname>:port par défaut).
+
 ```bash
 http://quickstart.cloudera:60010:16010
 ```
+
 Cliquez sur « Tableaux » dans le menu du haut.
 
 Cliquez sur lab_split_auto .
@@ -214,7 +216,7 @@ Split manuel				split 'nom_table_ou_region'
 Vérifier l'état du cluster	status 'detailed'
 
 
-7. Conclusion
+## 7. Conclusion
 
 Le splitting est le moteur de la distribution dans HBase. 
 Un bon administrateur préférera toujours le pre-splitting pour maîtriser la topologie de ses données 

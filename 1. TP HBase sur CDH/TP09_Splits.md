@@ -106,7 +106,34 @@ hbase org.apache.hadoop.hbase.util.LoadTestTool -tn lab_split_auto -write 1:1024
 Retournez dans le shell ou utilisez l'interface Web (port 16010) : 
 
 
-Pour le faire dans le shell :
+1. La méthode « à l'ancienne » (HBase 1.x)
+```bash
+Dans les versions antérieures, vous devez parcourir la table hbase:metata pour identifier l'emplacement des régions de votre table.
+Cette commande affichera la liste de toutes les régions appartenant à **lab_split_auto** :
+```
+```bash
+scan 'hbase:meta', {FILTER => "PrefixFilter('lab_split_auto')"}
+```
+
+```bash
+
+2. La méthode UI (la plus simple)
+
+Puisque vous exécutez une requête LoadTestToolet attendez les résultats, l'interface web est beaucoup plus visuelle.
+
+Ouvrez votre navigateur sur
+```bash
+http://<master-hostname>:16010(port par défaut).
+```
+Cliquez sur « Tableaux » dans le menu du haut.
+
+Cliquez sur lab_split_auto .
+
+Faites défiler vers le bas jusqu'à la section « Régions du tableau » . 
+
+Vous pouvez actualiser cette page pour voir apparaître de nouvelles régions au fur et à mesure que l'outil enregistre les données.
+
+Pour le faire dans le shell (version récente : HBase 2.+):
 
 ```bash
 hbase shell

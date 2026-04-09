@@ -146,6 +146,10 @@ hbase shell /tmp/insert_bibliotheque.rb
 
 Créez `/tmp/query_bibliotheque.hbase` pour interroger les données :
 
+```bash
+gedit /tmp/query_bibliotheque.hbase
+```
+
 ```ruby
 puts "=== GET simple ==="
 get 'bibliotheque', 'livre:001'

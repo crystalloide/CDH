@@ -112,26 +112,53 @@ Pour les applications à haute performance, on définit les régions à la créa
 
 ### Étape 1 : 
 
-Création avec points de splitImaginons que vos RowKeys soient des IDs d'utilisateurs allant de 0 à 1000. 
+Création avec points de split
+
+Imaginons que vos RowKeys soient des IDs d'utilisateurs allant de 0 à 1000. 
 
 Créons une table déjà découpée en 4 zones :
-Extrait de codecreate 'lab_presplit', 'cf', SPLITS => ['250', '500', '750']
+
+```bash
+create 'lab_presplit', 'cf', SPLITS => ['250', '500', '750']
+```
 
 ### Étape 2 : Vérification immédiateExtrait de codelist_regions 'lab_presplit'
 
 Résultat : La table possède déjà 4 régions réparties, avant même d'avoir inséré une seule donnée. 
+
 C'est la méthode idéale pour éviter le Hotspotting (surcharge d'un seul serveur en début de projet).
 
 5. Exercice 3 : Maintenance et Équilibrage
-Même avec des splits automatiques, le cluster peut devenir déséquilibré (un RegionServer gère plus de régions que les autres).Étape 1 : Forcer un split manuelSi une région est trop sollicitée (lectures intensives sur une plage précise), on peut la couper manuellement :Extrait de code# Syntaxe : split 'nom_de_la_region' ou 'nom_de_la_table'
+
+Même avec des splits automatiques, le cluster peut devenir déséquilibré (un RegionServer gère plus de régions que les autres).
+
+Étape 1 : Forcer un split manuelSi une région est trop sollicitée (lectures intensives sur une plage précise), 
+
+on peut la couper manuellement :Extrait de code# Syntaxe : split 'nom_de_la_region' ou 'nom_de_la_table'
+
+```bash
 split 'lab_presplit'
+```
 
 Étape 2 : Lancer le Balancer
 
 HBase déplace les régions entre les serveurs pour équilibrer la charge globale du cluster.
-Extrait de code
-balancer
 
+```bash
+balancer
+```
+
+##### Pendant l'exécution du test, vous pouvez ouvrir un autre terminal et exécuter :
+
+# Check how many regions have been created by the auto-split
+```bash
+echo "list_regions 'lab_split_auto'" | hbase shell
+```
+
+```bash
+# Check the row count (Note: this is slow on large tables)
+echo "count 'lab_split_auto'" | hbase shell
+```
 
 6. Synthèse des commandes utiles :
 

@@ -72,17 +72,18 @@ hbase org.apache.hadoop.hbase.util.LoadTestTool -tn lab_split_auto -write 1:1024
 
 ```bash
 
--tn lab_split_autoSpécifie le nom de la table cible. Si la table n'existe pas, l'outil tentera de la créer.
+-tn lab_split_auto   Spécifie le nom de la table cible. Si la table n'existe pas, l'outil tentera de la créer.
 
--write 1:1024:10: Ceci définit la configuration de la charge de travail d'écriture au format <avg_payload_size>:<max_payload_size>:<num_threads>.
+-write 1:1024:10     Ceci définit la configuration de la charge de travail d'écriture au format <avg_payload_size>:<max_payload_size>:<num_threads>.
 
-1 : Taille minimale de la charge utile (1 octet).
+1                    Taille minimale de la charge utile (1 octet).
 
-1024 : Taille maximale de la charge utile (1 Ko).
+1024                 Taille maximale de la charge utile (1 Ko).
 
-10 : L'outil utilisera 10 threads parallèles pour écrire les données.
+10                   L'outil utilisera 10 threads en parallèle pour écrire les données.
 
--num_keys 500000: Indique à l'outil d'écrire un total de 500 000 lignes uniques (clés).
+-num_keys 500000     Indique à l'outil d'écrire un total de 500 000 lignes uniques (clés).
+
 ```
 
 ##### À quoi s'attendre pendant l'exécution

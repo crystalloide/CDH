@@ -18,10 +18,15 @@ C'est le mode par défaut lorsqu'on lance simplement `hbase shell`. L'utilisateu
 - Produit des sorties parasites (bandeaux de démarrage, invites de commande) difficiles à parser
 
 ```bash
-$ hbase shell
+hbase shell
+```
+
 HBase Shell
 Use "help" to get list of supported commands.
-hbase(main):001:0> list
+
+```bash
+list
+```
 # ← résultat affiché ici
 ```
 

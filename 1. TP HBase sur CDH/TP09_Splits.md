@@ -108,13 +108,10 @@ hbase org.apache.hadoop.hbase.util.LoadTestTool -tn lab_split_auto -write 1:1024
 Dans les versions antérieures, vous devez parcourir la table hbase:metata pour identifier l'emplacement des régions de votre table.
 Cette commande affichera la liste de toutes les régions appartenant à **lab_split_auto** :
 ```
+
 ```bash
 scan 'hbase:meta', {FILTER => "PrefixFilter('lab_split_auto')"}
 ```
-
-```bash
-
-
 
 ##### 2. La méthode UI (la plus simple)
 
@@ -148,7 +145,9 @@ Vous devriez voir plusieurs régions avec des Start Key et End Key différentes.
 Notez comment le RegionName a été généré après le fractionnement.
 
 ## 4. Exercice 2 : Stratégie de Pre-splitting
+
 Le split "à la volée" provoque des pics de latence (compactage). 
+
 Pour les applications à haute performance, on définit les régions à la création.
 
 ### Étape 1 : 
@@ -221,8 +220,6 @@ Vérifier l'état du cluster	status 'detailed'
 Le splitting est le moteur de la distribution dans HBase. 
 Un bon administrateur préférera toujours le pre-splitting pour maîtriser la topologie de ses données 
 et éviter que le cluster ne "transpire" en réorganisant les fichiers lors des pics de charge.
-
-
 
 
 #### Complément ;

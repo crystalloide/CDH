@@ -22,7 +22,7 @@ Ce TP guidé vise à maîtriser l'automatisation des opérations HBase via des s
 
 ## Partie 1 — Mode on-interactif : prise en main
 
-Le HBase Shell étant basé sur JRuby, il supporte nativement l'exécution de scripts en mode non-interactif. C'est la base de toute automatisation.[^1]
+Le HBase Shell étant basé sur JRuby, il supporte nativement l'exécution de scripts en mode non-interactif. C'est la base de toute automatisation.
 
 **Étape 1 – Tester le mode non-interactif**
 

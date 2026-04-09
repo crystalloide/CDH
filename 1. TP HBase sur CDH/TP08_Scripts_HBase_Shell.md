@@ -1,6 +1,4 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
-# Hands-on Lab : Écriture de Scripts HBase Shell (CDH)
+# Hands-on Lab : Écriture de scripts shell HBase
 
 ## Contexte et Objectifs
 

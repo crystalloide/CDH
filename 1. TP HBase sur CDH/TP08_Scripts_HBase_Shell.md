@@ -56,7 +56,13 @@ cat /tmp/tables.txt
 
 ## Partie 2 — Création d'une Table via Script
 
-Créez le fichier `/tmp/create_bibliotheque.hbase` avec le contenu suivant :
+Créez le fichier `/tmp/create_bibliotheque.hbase` 
+
+```bash
+gedit /tmp/create_bibliotheque.hbase
+```
+
+avec le contenu suivant :
 
 ```ruby
 # Désactiver et supprimer la table si elle existe déjà

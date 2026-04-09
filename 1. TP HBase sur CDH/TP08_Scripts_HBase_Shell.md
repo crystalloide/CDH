@@ -278,46 +278,4 @@ chmod +x /tmp/admin_hbase.sh
 | `major_compact` | Fusion et nettoyage des HFiles | Optimisation [^5] |
 | `count` | Compter les lignes | Monitoring |
 
-
 ***
-
-## Livrables Attendus
-
-1. Les **5 scripts** fonctionnels exécutés avec succès (captures de sortie)
-2. Le fichier `scan_result.txt` généré par le script bash
-3. La sortie de `describe 'bibliotheque'` après l'`alter` de la Partie 5
-4. **Question de réflexion :** Quelle est la différence entre `delete` et `deleteall` dans un script ? Dans quel cas utilise-t-on `VERSIONS => N` dans un `get` ?
-<span style="display:none">[^10][^11][^12][^13][^14][^15][^6][^7][^8][^9]</span>
-
-<div align="center">⁂</div>
-
-[^1]: https://docs.cloudera.com/runtime/7.3.1/accessing-hbase/topics/hbase-script-with-shell.html
-
-[^2]: https://jdm.kr/blog/152
-
-[^3]: https://www.labri.fr/perso/auber/BigDataGL/tds/hbase.html
-
-[^4]: https://stackoverflow.com/questions/31126292/shell-script-for-executing-hbase-commands-deleting-all-hbase-tables
-
-[^5]: https://github.com/pinpoint-apm/pinpoint/blob/master/hbase/scripts/README.md
-
-[^6]: https://juvenal-chokogoue.developpez.com/tutoriels/apprendre-travailler-hbase/
-
-[^7]: https://forge.in2p3.fr/projects/travaux-pratiques-publics/wiki/HBase
-
-[^8]: https://blent.ai/blog/a/apache-hbase-base-nosql
-
-[^9]: https://blog.stephane-robert.info/docs/admin-serveurs/linux/fondamentaux/efficace-shell/premier-script/
-
-[^10]: http://insatunisia.github.io/TP-BigData/tp4/
-
-[^11]: https://www.datacamp.com/fr/tutorial/how-to-write-bash-script-tutorial
-
-[^12]: https://www.youtube.com/watch?v=jYi7-rAn-vQ
-
-[^13]: https://www.youtube.com/watch?v=gBCGeLjYBgQ
-
-[^14]: https://liora.io/hbase-guide-introductif-complet
-
-[^15]: https://openclassrooms.com/forum/sujet/apprendre-a-ecrire-des-scripts
-

@@ -101,10 +101,10 @@ gedit /tmp/insert_bibliotheque.rb
 ```
 
 ```ruby
-# Insertion de plusieurs livres
-puts "=== Insertion des données ==="
 
-table = HBase::Table.new('bibliotheque')
+# Insertion de plusieurs livres
+# Note: Vérifier que la table 'bibliotheque' existe déjà avec les CF 'info', 'auteur', et 'stats'
+# Si besoin : create 'bibliotheque', 'info', 'auteur', 'stats'
 
 data = [
   ['livre:001', 'info:titre',      'Le Petit Prince'],
@@ -121,11 +121,11 @@ data = [
   ['livre:003', 'info:annee',      '1951'],
   ['livre:003', 'auteur:nom',      'Asimov'],
   ['livre:003', 'auteur:pays',     'USA'],
-  ['livre:003', 'stats:emprunts',  '3400'],
+  ['livre:003', 'stats:emprunts',  '3400']
 ]
 
 data.each do |row, col, val|
-  family, qualifier = col.split(':')
+  # Use the shell's built-in 'put' method directly
   put 'bibliotheque', row, col, val
 end
 

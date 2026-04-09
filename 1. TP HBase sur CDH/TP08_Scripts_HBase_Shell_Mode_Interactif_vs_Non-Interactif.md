@@ -26,7 +26,6 @@ Use "help" to get list of supported commands.
 
 ```bash
 list
-```
 # ← résultat affiché ici
 ```
 
@@ -42,10 +41,12 @@ Le shell exécute un fichier de script ou des commandes pipées, puis se termine
 ```bash
 # 1. Passer un fichier de script
 hbase shell /tmp/mon_script.hbase
-
+```
+```bash
 # 2. Passer une commande inline via pipe
 echo "list" | hbase shell
-
+```
+```bash
 # 3. Here-document dans un script Bash
 hbase shell <<EOF
 put 'ma_table', 'row1', 'cf:col', 'valeur'

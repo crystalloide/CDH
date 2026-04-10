@@ -126,7 +126,7 @@ Puisque vous exécutez une requête LoadTestToolet attendez les résultats, l'in
 Ouvrez votre navigateur sur (http://<master-hostname>:port par défaut).
 
 ```bash
-http://quickstart.cloudera:60010:16010
+http://quickstart.cloudera:60010
 ```
 
 Cliquez sur « Tableaux » dans le menu du haut.

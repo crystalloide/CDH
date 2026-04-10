@@ -296,8 +296,10 @@ Voici pourquoi :
 
 La politique par défaut de HBase (depuis la version 0.94) est la IncreasingToUpperBoundRegionSplitPolicy. 
 Elle est conçue pour être "agressive" au début (pour répartir les données sur plusieurs serveurs rapidement) et plus stable ensuite.
+```
+#### La Formule Magique :
 
-La Formule MagiqueLe seuil de split pour une table donnée sur un RegionServer se calcule ainsi :
+Le seuil de split pour une table donnée sur un RegionServer se calcule ainsi :
 
 $$\text{Seuil} = \min(R^3 \cdot (2 \cdot \text{hbase.hregion.memstore.flush.size}), \text{hbase.hregion.max.filesize})$$
 
@@ -306,7 +308,7 @@ $R$ : Le nombre de régions de cette table présentes sur ce RegionServer.
 Memstore Flush Size : Généralement 128 Mo par défaut.
 
 Max Filesize : Le plafond (ex: 10 Go).
-```
+
 
 #### Exemple de calcul (Pas à pas)
 

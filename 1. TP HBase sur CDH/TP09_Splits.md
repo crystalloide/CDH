@@ -52,9 +52,15 @@ create 'lab_split_auto', 'data', {METHOD => 'table_att', MAX_FILESIZE => '671088
 
 ### Étape 2 : 
 
-Injection de données avec LoadTestToolSortez du shell (exit) 
+Injection de données avec LoadTestTool
 
-et utilisation de l'utilitaire natif de HBase pour injecter des données. 
+Sortez du shell HBase :
+
+```bash
+exit
+```
+
+et utilisons l'utilitaire natif de HBase pour injecter des données. 
 
 Nous allons écrire 500 000 lignes de 1 Ko chacune.
 

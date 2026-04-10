@@ -215,13 +215,13 @@ echo "count 'lab_split_auto'" | hbase shell
 
 ```bash
 ____________________________________________________________
-|Action	        		  |		Commande Shell
+|Action	        	  	  |		Commande Shell
 
 |Créer avec seuil de split	   | create 't1', 'f1', {MAX_FILESIZE => '67108864'}
 |Pré-splitter (Manuel)		    | create 't1', 'f1', SPLITS => ['A', 'B']
 |Lister les régions		       | list_regions 'nom_table'
 |Split manuel				           | split 'nom_table_ou_region'
-|Vérifier l'état du cluster	  | status 'detailed'
+|Vérifier l'état du cluster	   | status 'detailed'
 ____________________________________________________________
 
 ```

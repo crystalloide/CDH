@@ -129,7 +129,7 @@ Ouvrez votre navigateur sur (http://<master-hostname>:port par défaut).
 http://quickstart.cloudera:60010
 ```
 
-Cliquez sur « Tableaux » dans le menu du haut.
+Cliquez sur « Table Details » dans le menu du haut.
 
 Cliquez sur lab_split_auto .
 

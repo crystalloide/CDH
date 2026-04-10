@@ -289,7 +289,7 @@ mais c'est rarement recommandé en production car cela empêche une montée en c
 
 
 ### Piège classique pour les débutants : 
-
+```bash
 On règle le MAX_FILESIZE à 10 Go, mais on voit les régions se couper à 128 Mo. 
 
 Voici pourquoi : 
@@ -306,7 +306,7 @@ $R$ : Le nombre de régions de cette table présentes sur ce RegionServer.
 Memstore Flush Size : Généralement 128 Mo par défaut.
 
 Max Filesize : Le plafond (ex: 10 Go).
-
+```
 
 #### Exemple de calcul (Pas à pas)
 

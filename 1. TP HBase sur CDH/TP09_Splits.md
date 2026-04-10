@@ -213,6 +213,7 @@ echo "count 'lab_split_auto'" | hbase shell
 
 ## 6. Synthèse des commandes utiles :
 
+```bash
 ____________________________________________________________
 |Action	                 			|		Commande Shell
 ____________________________________________________________
@@ -222,6 +223,7 @@ ____________________________________________________________
 |Split manuel				           | split 'nom_table_ou_region'
 |Vérifier l'état du cluster	| status 'detailed'
 ____________________________________________________________
+```
 
 ## 7. Conclusion
 

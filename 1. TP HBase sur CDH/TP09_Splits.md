@@ -273,8 +273,8 @@ jusqu'à atteindre la limite finale fixée par le MAX_FILESIZE.
 Niveau		Source		           						Priorité
 
 Table		ALTER ou CREATE via Shell	  			     1 (Maximale)
-Cluster		hbase-site.xml				      	        2 (Moyenne)
-Défaut		Valeur codée en dur (HBase Default)	      	3 (Faible)
+Cluster		hbase-site.xml				      	         2 (Moyenne)
+Défaut		Valeur codée en dur (HBase Default)	      	 3 (Faible)
 ```
 
 Si un administrateur modifie le fichier hbase-site.xml et redémarre le cluster, 

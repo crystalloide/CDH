@@ -29,13 +29,13 @@ Lorsqu'une région devient trop volumineuse, HBase la "splitte" (fractionne) en 
 
 ---
 
-## 3. Exercice 1 : Observation du Split Automatique
+## 3. Exercice 1 : observation du split automatique
 
 Par défaut, les régions sont volumineuses (10 Go+). 
 
 Pour ce lab, nous allons forcer HBase à splitter dès **64 Mo** afin d'observer le phénomène + rapidement.
 
-### Étape 1 : Création de la table
+### Étape 1 : création de la table
 
 #### Ouvrez le shell HBase :
 

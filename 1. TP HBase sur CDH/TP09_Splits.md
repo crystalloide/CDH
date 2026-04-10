@@ -215,7 +215,7 @@ echo "count 'lab_split_auto'" | hbase shell
 
 ```bash
 ____________________________________________________________________________________________
-|Action	              	     |		Commande Shell
+|Action	              	        |		Commande Shell
 |___________________________________________________________________________________________
 |Créer avec seuil de split	   | create 't1', 'f1', {MAX_FILESIZE => '67108864'}
 |Pré-splitter (Manuel)		   | create 't1', 'f1', SPLITS => ['A', 'B']

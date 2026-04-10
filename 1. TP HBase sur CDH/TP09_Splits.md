@@ -183,7 +183,9 @@ Même avec des splits automatiques, le cluster peut devenir déséquilibré (un 
 
 Si une région est trop sollicitée (lectures intensives sur une plage précise), 
 
-on peut la couper manuellement :Extrait de code# Syntaxe : split 'nom_de_la_region' ou 'nom_de_la_table'
+on peut la couper manuellement :
+
+##### Syntaxe : split 'nom_de_la_region' ou 'nom_de_la_table'
 
 ```bash
 split 'lab_presplit'
